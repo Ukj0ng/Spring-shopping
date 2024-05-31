@@ -28,8 +28,6 @@ public class UserController {
 
     @PostMapping("join")
     public String join(@Valid @RequestBody JoinRequestDto joinRequestDto) {
-        System.out.println("join함수 실행");
-        System.out.println(joinRequestDto.toString());
         userService.join(joinRequestDto);
         return "index";
     }
