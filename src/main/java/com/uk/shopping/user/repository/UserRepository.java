@@ -1,0 +1,7 @@
+package com.uk.shopping.user;
+
+import com.uk.shopping.user.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User, Integer> {
+}
