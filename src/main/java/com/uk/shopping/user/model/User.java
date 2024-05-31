@@ -9,10 +9,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import java.sql.Timestamp;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Data
+@RequiredArgsConstructor
 @Entity
 public class User {
 
@@ -26,7 +28,7 @@ public class User {
     @Column(nullable = false, length = 100)
     private String password;
 
-    @Column(nullable = false, length = 10)
+    @Column(nullable = false, length = 50)
     private String email;
 
     @Column(nullable = false, length = 10)
