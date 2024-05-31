@@ -1,2 +1,5 @@
-package com.uk.shopping.user.model;public enum RoleType {
+package com.uk.shopping.user.model;
+
+public enum RoleType {
+    USER, ADMIN
 }
