@@ -1,7 +1,9 @@
-package com.uk.shopping.user.exception;
+package com.uk.shopping.user.handler.exception;
+
+import com.uk.shopping.common.constants.ErrorMessage;
 
 public class LoginFailedException extends RuntimeException {
-    public LoginFailedException(String message) {
-        super(message);
+    public LoginFailedException(ErrorMessage errorMessage) {
+        super(errorMessage.getMessage());
     }
 }
