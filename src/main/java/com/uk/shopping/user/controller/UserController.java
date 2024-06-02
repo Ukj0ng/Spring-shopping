@@ -1,6 +1,7 @@
 package com.uk.shopping.user.controller;
 
 import com.uk.shopping.user.dto.JoinRequestDto;
+import com.uk.shopping.user.dto.LoginRequestDto;
 import com.uk.shopping.user.model.User;
 import com.uk.shopping.user.service.UserService;
 import jakarta.validation.Valid;
@@ -29,6 +30,18 @@ public class UserController {
     @PostMapping("join")
     public String join(@Valid @RequestBody JoinRequestDto joinRequestDto) {
         userService.join(joinRequestDto);
+        return "index";
+    }
+
+    @GetMapping("login")
+    public String login() {
+        return "user/login";
+    }
+
+    @PostMapping("login")
+    public String login(@Valid @RequestBody LoginRequestDto loginRequestDto) {
+        User user = userService.login(loginRequestDto);
+        System.out.println(user.toString());
         return "index";
     }
 }
