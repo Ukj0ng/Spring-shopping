@@ -1,5 +1,6 @@
-package com.uk.shopping.user.exception;
+package com.uk.shopping.user.handler;
 
+import com.uk.shopping.user.handler.exception.LoginFailedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
