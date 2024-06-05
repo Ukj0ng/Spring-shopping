@@ -1,7 +1,7 @@
 package com.uk.shopping.common.config;
 
 import com.uk.shopping.common.auth.PrincipalDetailsService;
-import com.uk.shopping.common.jwt.JWTAuthorizationFilter;
+import com.uk.shopping.common.jwt.JwtAuthorizationFilter;
 import com.uk.shopping.common.jwt.JwtAuthenticationFilter;
 import com.uk.shopping.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -46,7 +46,7 @@ public class SecurityConfig {
             .formLogin(AbstractHttpConfigurer::disable)
             .httpBasic(AbstractHttpConfigurer::disable)
             .addFilter(new JwtAuthenticationFilter(authenticationManager))
-            .addFilter(new JWTAuthorizationFilter(authenticationManager, userRepository))
+            .addFilter(new JwtAuthorizationFilter(authenticationManager, userRepository))
             .authorizeHttpRequests(auth -> auth
                 .anyRequest().permitAll()
             );
